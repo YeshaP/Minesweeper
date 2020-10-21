@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Yesha's Minesweeper</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+
+  <div class="menu">
+    <!-- <div makeGame('10','8','10')></div> -->
+    <div class="menuButton"  type="button" onclick="makeGame('10','8','10')"  id = "easyButton" >Easy</div>
+    <div class="menuButton" type="button" onclick="makeGame('18','14','40')" id = "mediumButton" >Medium</div>
+    <div class="menuButton" type="button" onclick="makeGame('24','20','100')" id = "hardButton">Hard</div>
+
+    <!-- <div class="menuButton" data-size="10x10"></div>
+    <div class="menuButton" data-size="15x15"></div>
+    <div class="menuButton" data-size="20x20"></div> -->
+
+  </div>
+
+
+
+  <div class="gridwrapper">
+    <div class="grid"></div>
+  </div>
+  <div class="status">
+    <div id="timer"></div>
+    <div id = "flags"></div>
+    <!-- Flags: <span class="mines">0</span> -->
+  </div>
+
+  <div id="overlay">
+      <div id="overlayin">
+        <p class="big glow">Congratulations, you won!!!</p>
+        <p class="darker">It took you <span class="mines">0</span> moves.</p>
+        <p class="darker">Click anywhere to start a new game.
+      </div>
+    </div>
+
+
+
+  <!-- <script src="msgame.js"></script> -->
+  <div id="btnContainer">
+  </div>
+
+  <!-- <div id="overlay"> -->
+
+
+    <!-- <div id="overlayin">
+      <p class="big glow">Congratulations, you won!!!</p>
+      <p class="darker">It took you <span class="moveCount">0</span> moves.</p>
+      <p class="darker">Click anywhere to start a new game.
+    </div> -->
+  <!-- </div> -->
+
+
+  <!-- <script src="s.js"></script> -->
+  <script src="msgame.js"></script>
+  <!-- <script src = "s.js"></script> -->
+  <script src="board.js"></script>
+
+</body>
+</html>
