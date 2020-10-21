@@ -13,7 +13,11 @@ timeoutHandle = setInterval(function(){
   t++;
   document.getElementById("timer").innerHTML = ('000' + t).substr(-3);
 }, 1000);
-alert("Time Limit Exceeded");
+
+if(t===1000){
+  alert("Time Limit Exceeded");
+}
+
 }
 
 /*function button_cb(s, cols, rows) {
