@@ -13,10 +13,7 @@ timeoutHandle = setInterval(function(){
   t++;
   document.getElementById("timer").innerHTML = ('000' + t).substr(-3);
 }, 1000);
-console.log(timerHandle);
-if(timerHandle==999){
-  alert("Time Limit Exceeded");
-}
+
 
 }
 
