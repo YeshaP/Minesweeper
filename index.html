@@ -16,10 +16,6 @@
     <div class="menuButton" type="button" onclick="makeGame('18','14','40')" id = "mediumButton" >Medium</div>
     <div class="menuButton" type="button" onclick="makeGame('24','20','100')" id = "hardButton">Hard</div>
 
-    <!-- <div class="menuButton" data-size="10x10"></div>
-    <div class="menuButton" data-size="15x15"></div>
-    <div class="menuButton" data-size="20x20"></div> -->
-
   </div>
 
 
@@ -30,38 +26,35 @@
   <div class="status">
     <div id="timer"></div>
     <div id = "flags"></div>
-    <!-- Flags: <span class="mines">0</span> -->
   </div>
 
   <div id="overlay">
-      <div id="overlayin">
-        <p class="big glow">Congratulations, you won!!!</p>
-        <p class="darker">It took you <span class="mines">0</span> moves.</p>
-        <p class="darker">Click anywhere to start a new game.
+    <div id="overlayin">
+      <p class="big glow">All Mines Exploded! You Lose!</p>
+      <p class="darker">Click anywhere to start a new game.
       </div>
     </div>
 
+    <div id="overlayWin">
+      <div id="overlayin">
+        <p class="big glow">You Win!</p>
+        <p class="darker">Click anywhere to start a new game.
+        </div>
+      </div>
 
 
-  <!-- <script src="msgame.js"></script> -->
-  <div id="btnContainer">
-  </div>
 
-  <!-- <div id="overlay"> -->
-
-
-    <!-- <div id="overlayin">
-      <p class="big glow">Congratulations, you won!!!</p>
-      <p class="darker">It took you <span class="moveCount">0</span> moves.</p>
-      <p class="darker">Click anywhere to start a new game.
-    </div> -->
-  <!-- </div> -->
+      <!-- <script src="msgame.js"></script> -->
+      <div id="btnContainer">
+      </div>
 
 
-  <!-- <script src="s.js"></script> -->
-  <script src="msgame.js"></script>
-  <!-- <script src = "s.js"></script> -->
-  <script src="board.js"></script>
 
-</body>
-</html>
+
+      <!-- <script src="s.js"></script> -->
+      <script src="msgame.js"></script>
+      <!-- <script src = "s.js"></script> -->
+      <script src="board.js"></script>
+
+    </body>
+    </html>

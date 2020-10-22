@@ -14,8 +14,8 @@ body {
   background: rgb(255, 237, 179);
 }
 
-.card {
-  background-image: url(download.jpg);
+.button {
+  background-color: black;
   background-repeat: no-repeat;
   background-size: cover;
 
@@ -27,14 +27,14 @@ body {
   margin: 2px;
   transition:.25s;
   opacity: 0.9;
-  transform: rotateY(180deg);
+  font-size: 50%;
+  /* transform: rotateY(180deg); */
 
-  animation: fadeIn 0.5s;
-  animation-fill-mode: forwards;
+  /* animation: fadeIn 0.5s; */
+  /* animation-fill-mode: forwards; */
 }
 
-.card.flipped {
-  background-image: url(download.png);
+.button.uncover {
   opacity: 1;
   transform: rotateY(0deg);
 }
@@ -92,6 +92,38 @@ body {
   align-items: stretch;
 }
 
+#overlayWin {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+  opacity: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: 0s;
+  transition: all 0s;
+
+  visibility: hidden;
+  animation: fadeOut 0.5s;
+  animation-fill-mode: forwards;
+}
+#overlayWin * {
+  pointer-events: none;
+}
+
+#overlayWin.active {
+  visibility: visible;
+  animation: fadeIn 0.5s;
+  animation-fill-mode: forwards;
+}
+
+
+
+
 #overlay {
   position: fixed;
   top: 0;
@@ -144,7 +176,7 @@ p.big {
   font-size: 2em !important;
 }
 
-p.darker {
+p.mines {
   color: #aaa;
 }
 

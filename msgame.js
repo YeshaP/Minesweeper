@@ -172,13 +172,7 @@ let MSGame = (function(){
         nmines: this.nmines
       }
     }
-    /*button_cb(s, cols, rows) {
-      s.cols = cols;
-      s.rows = rows;
-      //make_solvable(s);
-      //getRendering();
-      //uncover(cols, rows);
-    }*/
+
   }
 
 
