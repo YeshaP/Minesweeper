@@ -4,6 +4,11 @@ var timeoutHandle;
 var flags;
 let nbuttons;
 
+
+onload = function(){
+  makeGame('10','8','10');
+}
+
 function resetTime(){
 
   clearInterval(timeoutHandle);
@@ -218,9 +223,4 @@ function makeGame(ncols,nrows,mines){
   console.log(newGame.getRendering().join("\n"));
   console.log(newGame.getStatus());
 
-}
-
-
-onload = function(){
-  makeGame('10','8','10');
 }
