@@ -22,7 +22,7 @@ function resetTime(){
       clearInterval(timeoutHandle);
       t=999;
     }
-    document.getElementById("timer").innerHTML = ('000' + t).substr(-3);
+    document.getElementById("timer").innerHTML = ("Time: "+ t);
   }, 1000);
 
 
@@ -165,8 +165,8 @@ function prepare_dom(s, rows, cols, newGame) {
     });
     button.addEventListener("contextmenu", rightClick => {
       clickSide = 1;
-      newGame = button_cb(s, i, newGame, cols, rows, button, clickSide);
       rightClick.preventDefault();
+      newGame = button_cb(s, i, newGame, cols, rows, button, clickSide);
     });
     container.appendChild(button);
   }

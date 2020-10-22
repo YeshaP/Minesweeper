@@ -29,11 +29,7 @@ body {
   margin: 2px;
   transition:.25s;
   opacity: 0.9;
-  font-size: 50%;
-  /* transform: rotateY(180deg); */
-
-  /* animation: fadeIn 0.5s; */
-  /* animation-fill-mode: forwards; */
+  font-size: 40%;
 }
 
 .button.uncover {
