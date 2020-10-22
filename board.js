@@ -80,6 +80,7 @@ function renderLeftClickBoardButton(newGame, col, row, button){
 
   //end game and show min
   if(newGame.getStatus().exploded == true) {
+    clearInterval(timeoutHandle);
     let idx = 0;
     let mineArr = [];
     for(let i = 0; i < newGame.nrows; i++){
