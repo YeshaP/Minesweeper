@@ -1,14 +1,16 @@
-
+// Borrowed code from Professor Pavol Federl
+// Borrowed code from TA Emmanuel Onu
 "use strict";
 var timeoutHandle;
 var flags;
 let nbuttons;
 
-
+// On load of javascript create a 10x8 board
 onload = function(){
   makeGame('10','8','10');
 }
 
+// Reset the Time each time a new level is selected
 function resetTime(){
 
   clearInterval(timeoutHandle);
@@ -26,18 +28,16 @@ function resetTime(){
 
 }
 
+// Clear a div for board
 // https://www.geeksforgeeks.org/how-to-clear-the-content-of-a-div-using-javascript/
 function clearBox(elementID) {
   var div = document.getElementById(elementID);
-  if(timer){
-    window.clearInterval(timer);
-  }
   while(div.firstChild) {
     div.removeChild(div.firstChild);
   }
 }
 
-
+// Create button and based on right or left click render accordingly
 function button_cb(s, i, newGame, ncols, nrows, button, clickSide) {
   const col = i % ncols;
   const row = Math.floor(i / ncols);
@@ -59,6 +59,8 @@ function button_cb(s, i, newGame, ncols, nrows, button, clickSide) {
 
   return newGame;
 }
+
+// Render all squares after click
 function renderRemainingButtons(newGame, ncols, nrows, currCol, currRow){
   let idx = 0;
   let shownArr = [];
@@ -80,6 +82,8 @@ function renderRemainingButtons(newGame, ncols, nrows, currCol, currRow){
 
   return newGame;
 }
+
+// Render game board on left click
 function renderLeftClickBoardButton(newGame, col, row, button){
   console.log("Left Button Pressed (Uncover)");
 
@@ -118,14 +122,12 @@ function renderLeftClickBoardButton(newGame, col, row, button){
     button.innerHTML = newGame.arr[row][col].count;
     newGame.uncover(row, col);
   }
-
   winningCondition(newGame);
-
 
   return newGame;
 }
 
-
+// Render right click by being able to put flags on the hidden box
 function renderRightClickBoardButton(newGame, col, row, button){
   console.log("Right Button Pressed (Mark)");
   console.log(newGame.arr[row][col]);
@@ -142,12 +144,12 @@ function renderRightClickBoardButton(newGame, col, row, button){
     flags++;
   }
   document.getElementById("flags").innerHTML = "Flags: " + flags;
-
+  winningCondition();
   return newGame;
 }
 
 
-
+// Create the grid
 function prepare_dom(s, rows, cols, newGame) {
   let container = document.getElementById('btnContainer');
   for( let i = 0 ; i < nbuttons ; i ++) {
@@ -171,6 +173,7 @@ function prepare_dom(s, rows, cols, newGame) {
   return newGame;
 }
 
+// Check if a player has won the game
 function winningCondition(newGame){
   let totalUncovered = newGame.nuncovered + newGame.nmines;
   if(totalUncovered == nbuttons && flags == 0){
@@ -185,6 +188,8 @@ function winningCondition(newGame){
   }
 }
 
+// Create the game with input from html, create a grid with rows and coloumns specified.
+// Create the number of mines specified
 function makeGame(ncols,nrows,mines){
   let newGame = new MSGame();
 
@@ -195,20 +200,13 @@ function makeGame(ncols,nrows,mines){
     onoff: []
   }
 
-
-
   resetTime();
-
   flags = mines;
   document.getElementById("flags").innerHTML = "Flags: " + flags;
 
   newGame.init(nrows,ncols,mines);
   console.log(newGame.getRendering().join("\n"));
   console.log(newGame.getStatus());
-
-
-
-
   nbuttons = ncols*nrows;
   clearBox('btnContainer');
   let container = document.getElementById('btnContainer');
@@ -216,8 +214,6 @@ function makeGame(ncols,nrows,mines){
 
   container.style.gridTemplateColumns = `repeat(${ncols}, ${buttonSize}px)`;
   container.style.gridTemplateRows = `repeat(${nrows}, ${buttonSize}px)`;
-
-
   newGame = prepare_dom(state, nrows, ncols, newGame);
 
   console.log(newGame.getRendering().join("\n"));

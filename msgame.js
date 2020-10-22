@@ -1,3 +1,4 @@
+// Borrowed code from Professor Pavol Federl
 "use strict";
 
 let MSGame = (function(){
